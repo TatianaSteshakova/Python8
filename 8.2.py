@@ -8,17 +8,15 @@ for _ in range(N):
     numbers.append(num)
 
 length = len(numbers)
-start = 0
-end = length - 1
 
-while start < end:
-        numbers[start], numbers[end] = numbers[end], numbers[start]
-        start += 1
-        end -= 1
+new = [0] * length
+
+for i in range(length):
+     new[(i + 1) % length] = numbers[i]
 
 txt = ""
 
-for num in numbers:
+for num in new:
       txt += str(num) + " "
 
 print(txt)
